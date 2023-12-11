@@ -20,12 +20,9 @@ function setup() {
   noLoop();
 }
 
-
-
 function draw() {
   background(0); 
   
-
   translate(width / 2, height / 2);
 
   fft.analyze();
@@ -75,9 +72,7 @@ function draw() {
     else {
       particles.splice(i, 1);
     }
-
   }
-
 }
 
 function mouseClicked() {
