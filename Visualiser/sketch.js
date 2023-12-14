@@ -1,4 +1,8 @@
-let song;
+let songOne;
+let songTwo;
+let songThree;
+let songFour;
+let songFive;
 let img;
 let fft;
 let particles = [];
@@ -10,6 +14,7 @@ function preload() {
   songOne = loadSound('Money Trees.mp3');
   songTwo = loadSound('United in Grief.mp3');
   songThree = loadSound('Silent Hill.mp3');
+  songFive = loadSound('Count Me Out.mp3');
   img = loadImage('bg.jpg');
 }
 
@@ -104,23 +109,20 @@ function drawMainMenu() {
 
 
   // Check for mouse clicks to navigate
-  if (mouseIsPressed) {
-    if (mouseY > height / 2 - 50 && mouseY < height / 2 - 10) {
-      // Play Song
-      isVisualizerActive = false;
-      if (song.isPlaying()) {
-        song.pause();
-        noLoop();
-      }
-      else {
-        song.play();
-        loop();
-      }
-    } 
-    else if (mouseY > height / 2 + 10 && mouseY < height / 2 + 50) {
-      // Visualizer
-      isVisualizerActive = true;
+  function keyTyped() {
+    if (key === '1') {
+      loadSound ('Money Trees.mp3');
+      let isVisualizerActive = true;
+    } else if (key === '2') {
+
+    } else if (key === '3') {
+
+    } else if (key === '4') {
+
+    } else if (key === '5') {
+
     }
+
   }
 }
 
