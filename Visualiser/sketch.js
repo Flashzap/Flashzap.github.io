@@ -4,6 +4,10 @@ let songThree;
 let songFour;
 let songFive;
 let img;
+let a;
+let b;
+let c;
+let t;
 let fft;
 let particles = [];
 let amp;
@@ -16,6 +20,7 @@ function preload() {
   songThree = loadSound('Silent Hill.mp3');
   songFive = loadSound('Count Me Out.mp3');
   img = loadImage('bg.jpg');
+  a = loadImage(MrM)
 }
 
 function setup() {
@@ -27,11 +32,11 @@ function setup() {
 
   img.filter(BLUR, 12);
 
-  noLoop();
+
 }
 
 function draw() {
-  if (isVisualizerActive) {
+  if (isVisualizerActive === true) {
     drawVisualizer();
   }
   else {
@@ -40,7 +45,9 @@ function draw() {
 }
 
 function drawVisualizer() {
-  translate(width / 2, height / 2);
+  background(0); 
+  
+  translate(width / 2, height / 2); 
 
   fft.analyze();
   amp = fft.getEnergy(20, 200);
@@ -92,40 +99,6 @@ function drawVisualizer() {
   }
 }
 
-function drawMainMenu() {
-  background(0);
-  fill(255);
-  textSize(32);
-  textAlign(CENTER, CENTER);
-  text("Pick a Song", width / 2, height / 4);
-
-  // Display menu options
-  textSize(24);
-  text("1. Money Trees (kendrick Lamar)", width / 2, height / 2 - 150);
-  text("2. United in Grief (kendrick Lamar)", width / 2, height / 2 - 90);
-  text("3. TipToe (Tyler the Creator)", width / 2, height / 2 - 30);
-  text("4. Silent Hill (kendrick Lamar)", width / 2, height / 2 + 30);
-  text("5. Count me out (kendrick Lamar)", width / 2, height / 2 + 90);
-
-
-  // Check for mouse clicks to navigate
-  function keyTyped() {
-    if (key === '1') {
-      loadSound ('Money Trees.mp3');
-      let isVisualizerActive = true;
-    } else if (key === '2') {
-
-    } else if (key === '3') {
-
-    } else if (key === '4') {
-
-    } else if (key === '5') {
-
-    }
-
-  }
-}
-
 class Particle {
   constructor() {
     this.pos = p5.Vector.random2D().mult(250);
@@ -159,4 +132,54 @@ class Particle {
     fill(this.color);
     ellipse(this.pos.x, this.pos.y, this.w);
   }
+}
+
+function drawMainMenu() {
+  background(0);
+  fill(255);
+  textSize(32);
+  textAlign(CENTER, CENTER);
+  text("Pick a Song", width / 2, height / 4);
+
+  // Display menu options
+  textSize(24);
+  text("1. Money Trees (kendrick Lamar)", width / 2, height / 2 - 150);
+  text("2. United in Grief (kendrick Lamar)", width / 2, height / 2 - 90);
+  text("3. TipToe (Tyler the Creator)", width / 2, height / 2 - 30);
+  text("4. Silent Hill (kendrick Lamar)", width / 2, height / 2 + 30);
+  text("5. Count me out (kendrick Lamar)", width / 2, height / 2 + 90);
+
+}
+// Check for mouse clicks to navigate
+function keyTyped() {
+
+  if (key === '1') {
+    songOne.play();
+    isVisualizerActive = true;
+  }
+  else if (key === '2') {
+    songTwo.play();
+    isVisualizerActive = true;
+  }
+  else if (key === '3') {
+    songThree.play();
+    isVisualizerActive = true;
+  }
+  else if (key === '4') {
+    songFour.play();
+    isVisualizerActive = true;
+  }
+  else if (key === '5') {
+    songFive.play();
+    isVisualizerActive = true;
+  }
+  else if (key === ' ') {
+    songOne.pause();
+    songTwo.pause();
+    songThree.pause();
+    songFour.pause();
+    songFive.pause();
+    isVisualizerActive = false;
+  }
+
 }
