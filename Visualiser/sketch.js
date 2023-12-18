@@ -12,6 +12,7 @@ let fft;
 let particles = [];
 let amp;
 let isVisualizerActive = false;
+let currentBackground;
 
 function preload() {
   songFour = loadSound('TIPTOE.mp3');
@@ -19,8 +20,11 @@ function preload() {
   songTwo = loadSound('United in Grief.mp3');
   songThree = loadSound('Silent Hill.mp3');
   songFive = loadSound('Count Me Out.mp3');
-  img = loadImage('bg.jpg');
-  a = loadImage(MrM)
+  img = loadImage('GKMC.jpg');
+  a = loadImage('MrMoraleA.jpg');
+  b = loadImage('MrMoraleB.jpg');
+  c = loadImage('MrMorale C.jpg');
+  t = loadImage('TipToe.jpg');
 }
 
 function setup() {
@@ -30,8 +34,11 @@ function setup() {
   rectMode(CENTER);
   fft = new p5.FFT(0.3);
 
-  img.filter(BLUR, 12);
-
+  img.filter(BLUR, 3);
+  a.filter(BLUR, 3);
+  b.filter(BLUR, 3);
+  c.filter(BLUR, 3);
+  t.filter(BLUR, 3);
 
 }
 
@@ -57,7 +64,7 @@ function drawVisualizer() {
     rotate(random(-0.5, 0.5));
   }
 
-  image(img, 0, 0, width + 100, height + 100);
+  image(currentBackground, 0, 0, width + 100, height + 100);
   pop();
 
   let alpha = map(amp, 0, 255, 100, 150);
@@ -139,7 +146,7 @@ function drawMainMenu() {
   fill(255);
   textSize(32);
   textAlign(CENTER, CENTER);
-  text("Pick a Song", width / 2, height / 4);
+  text("Song List", width / 2, height / 4);
 
   // Display menu options
   textSize(24);
@@ -156,22 +163,27 @@ function keyTyped() {
   if (key === '1') {
     songOne.play();
     isVisualizerActive = true;
+    currentBackground = img;
   }
   else if (key === '2') {
     songTwo.play();
     isVisualizerActive = true;
+    currentBackground = a;
   }
   else if (key === '3') {
     songThree.play();
     isVisualizerActive = true;
+    currentBackground = t;
   }
   else if (key === '4') {
     songFour.play();
     isVisualizerActive = true;
+    currentBackground = b;
   }
   else if (key === '5') {
     songFive.play();
     isVisualizerActive = true;
+    currentBackground = c;
   }
   else if (key === ' ') {
     songOne.pause();
