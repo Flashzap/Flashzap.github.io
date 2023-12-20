@@ -12,6 +12,10 @@ let a;
 let b;
 let c;
 let t;
+let s;
+let k;
+let e;
+let f;
 let fft;
 let particles = [];
 let amp;
@@ -21,18 +25,22 @@ let currentBackground;
 function preload() {
   songFour = loadSound('TIPTOE.mp3');
   songOne = loadSound('Money Trees.mp3');
-  songTwo = loadSound('United in Grief.mp3');
+  songTwo = loadSound('United In Grief.mp3');
   songThree = loadSound('Silent Hill.mp3');
   songFive = loadSound('Count Me Out.mp3');
-  songSix = loadSound('Count Me Out.mp3');
-  songSev = loadSound('Count Me Out.mp3');
-  songEte = loadSound('Count Me Out.mp3');
-  songNine = loadSound('Count Me Out.mp3');
+  songSix = loadSound('SICKO MODE.mp3');
+  songSev = loadSound('Family ties.mp3');
+  songEte = loadSound('Godzilla.mp3');
+  songNine = loadSound('Flashing Lights.mp3');
   img = loadImage('GKMC.jpg');
   a = loadImage('MrMoraleA.jpg');
   b = loadImage('MrMoraleB.jpg');
   c = loadImage('MrMorale C.jpg');
   t = loadImage('TipToe.jpg');
+  s = loadImage('ASTRO.JPG');
+  k = loadImage('Family.jpg');
+  e = loadImage('MTBMB.jpg');
+  f = loadImage('GRAD.jpg');
 }
 
 function setup() {
@@ -158,15 +166,15 @@ function drawMainMenu() {
 
   // Display menu options
   textSize(24);
-  text("1. Money Trees (kendrick Lamar)", width / 2, height / 2 - 360);
-  text("2. United in Grief (kendrick Lamar)", width / 2, height / 2 - 255);
+  text("1. Money Trees (Kendrick Lamar)", width / 2, height / 2 - 360);
+  text("2. United in Grief (Kendrick Lamar)", width / 2, height / 2 - 255);
   text("3. TipToe (Tyler the Creator)", width / 2, height / 2 - 170);
-  text("4. Silent Hill (kendrick Lamar)", width / 2, height / 2 - 85);
-  text("5. Count me out (kendrick Lamar)", width / 2, height / 2 + 0);
-  text("6. Count me out (kendrick Lamar)", width / 2, height / 2 + 85);
-  text("7. Count me out (kendrick Lamar)", width / 2, height / 2 + 170);
-  text("8. Count me out (kendrick Lamar)", width / 2, height / 2 + 255);
-  text("9. Count me out (kendrick Lamar)", width / 2, height / 2 + 360);
+  text("4. Silent Hill (Kendrick Lamar)", width / 2, height / 2 - 85);
+  text("5. Count me out (Kendrick Lamar)", width / 2, height / 2 + 0);
+  text("6. SICKO MODE (Travis Scott)", width / 2, height / 2 + 85);
+  text("7. Family ties (kendrick Lamar & Baby Keem)", width / 2, height / 2 + 170);
+  text("8. Godzilla (Eminem ft. juice WRLD)", width / 2, height / 2 + 255);
+  text("9. Flashing Lights (Kanye West)", width / 2, height / 2 + 360);
 
 }
 // Check for mouse clicks to navigate
@@ -180,6 +188,10 @@ function keyTyped() {
     songThree.pause();
     songFour.pause();
     songFive.pause();
+    songSix.pause();
+    songSev.pause();
+    songEte.pause();
+    songNine.pause();
   }
   else if (key === '2') {
     songTwo.play();
@@ -189,6 +201,10 @@ function keyTyped() {
     songThree.pause();
     songFour.pause();
     songFive.pause();
+    songSix.pause();
+    songSev.pause();
+    songEte.pause();
+    songNine.pause();
   }
   else if (key === '3') {
     songThree.play();
@@ -198,6 +214,10 @@ function keyTyped() {
     songTwo.pause();
     songFour.pause();
     songFive.pause();
+    songSix.pause();
+    songSev.pause();
+    songEte.pause();
+    songNine.pause();
   }
   else if (key === '4') {
     songFour.play();
@@ -207,6 +227,10 @@ function keyTyped() {
     songTwo.pause();
     songThree.pause();
     songFive.pause();
+    songSix.pause();
+    songSev.pause();
+    songEte.pause();
+    songNine.pause();
   }
   else if (key === '5') {
     songFive.play();
@@ -216,49 +240,73 @@ function keyTyped() {
     songTwo.pause();
     songThree.pause();
     songFour.pause();
+    songSix.pause();
+    songSev.pause();
+    songEte.pause();
+    songNine.pause();
   }
   else if (key === '6') {
     songSix.play();
     isVisualizerActive = true;
-    currentBackground = c;
-    songOne.pause();
-    songTwo.pause();
-    songThree.pause();
-    songFour.pause();
-  }
-  else if (key === '7') {
-    songSev.play();
-    isVisualizerActive = true;
-    currentBackground = c;
-    songOne.pause();
-    songTwo.pause();
-    songThree.pause();
-    songFour.pause();
-  }
-  else if (key === '8') {
-    songEte.play();
-    isVisualizerActive = true;
-    currentBackground = c;
-    songOne.pause();
-    songTwo.pause();
-    songThree.pause();
-    songFour.pause();
-  }
-  else if (key === '9') {
-    songNine.play();
-    isVisualizerActive = true;
-    currentBackground = c;
-    songOne.pause();
-    songTwo.pause();
-    songThree.pause();
-    songFour.pause();
-  }
-  else if (key === ' ') {
+    currentBackground = s;
     songOne.pause();
     songTwo.pause();
     songThree.pause();
     songFour.pause();
     songFive.pause();
+    songSev.pause();
+    songEte.pause();
+    songNine.pause();
+  }
+  else if (key === '7') {
+    songSev.play();
+    isVisualizerActive = true;
+    currentBackground = k;
+    songOne.pause();
+    songTwo.pause();
+    songThree.pause();
+    songFour.pause();
+    songFive.pause();
+    songSix.pause();
+    songEte.pause();
+    songNine.pause();
+  }
+  else if (key === '8') {
+    songEte.play();
+    isVisualizerActive = true;
+    currentBackground = e;
+    songOne.pause();
+    songTwo.pause();
+    songThree.pause();
+    songFour.pause();
+    songFive.pause();
+    songSix.pause();
+    songSev.pause();
+    songNine.pause();
+  }
+  else if (key === '9') {
+    songNine.play();
+    isVisualizerActive = true;
+    currentBackground = f;
+    songOne.pause();
+    songTwo.pause();
+    songThree.pause();
+    songFour.pause();
+    songFive.pause();
+    songSix.pause();
+    songSev.pause();
+    songEte.pause();
+  }
+  else if (key === ' ') {   
+    songOne.pause();
+    songTwo.pause();
+    songThree.pause();
+    songFour.pause();
+    songFive.pause();
+    songSix.pause();
+    songSev.pause();
+    songEte.pause();
+    songNine.pause();
     isVisualizerActive = false;
   }
 
