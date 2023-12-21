@@ -31,7 +31,7 @@ function preload() {
   songSix = loadSound('SICKO MODE.mp3');
   songSev = loadSound('Family ties.mp3');
   songEte = loadSound('Godzilla.mp3');
-  songNine = loadSound('Flashing Lights.mp3');
+  songNine = loadSound('Lights.mp3');
   img = loadImage('GKMC.jpg');
   a = loadImage('MrMoraleA.jpg');
   b = loadImage('MrMoraleB.jpg');
@@ -40,7 +40,7 @@ function preload() {
   s = loadImage('ASTRO.JPG');
   k = loadImage('Family.jpg');
   e = loadImage('MTBMB.jpg');
-  f = loadImage('GRAD.jpg');
+  f = loadImage('Fantasy.jpg');
 }
 
 function setup() {
@@ -55,6 +55,10 @@ function setup() {
   b.filter(BLUR, 3);
   c.filter(BLUR, 3);
   t.filter(BLUR, 3);
+  s.filter(BLUR, 3);
+  k.filter(BLUR, 3);
+  e.filter(BLUR, 3);
+  f.filter(BLUR, 3);
 
 }
 
@@ -174,10 +178,9 @@ function drawMainMenu() {
   text("6. SICKO MODE (Travis Scott)", width / 2, height / 2 + 85);
   text("7. Family ties (kendrick Lamar & Baby Keem)", width / 2, height / 2 + 170);
   text("8. Godzilla (Eminem ft. juice WRLD)", width / 2, height / 2 + 255);
-  text("9. Flashing Lights (Kanye West)", width / 2, height / 2 + 360);
-
+  text("9. All of the Lights (Kanye West)", width / 2, height / 2 + 360);
 }
-// Check for mouse clicks to navigate
+
 function keyTyped() {
 
   if (key === '1') {
@@ -309,5 +312,4 @@ function keyTyped() {
     songNine.pause();
     isVisualizerActive = false;
   }
-
 }
