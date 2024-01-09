@@ -21,6 +21,15 @@ let particles = [];
 let amp;
 let isVisualizerActive = false;
 let currentBackground;
+let MT;
+let UG;
+let SH;
+let TT;
+let CMO;
+let SM;
+let FT;
+let GOD;
+let AOTL;
 
 function preload() {
   songFour = loadSound('TIPTOE.mp3');
@@ -60,6 +69,229 @@ function setup() {
   e.filter(BLUR, 3);
   f.filter(BLUR, 3);
 
+  MT = createButton('Money Trees (Kendrick Lamar)');
+  MT.position(20, 100);
+  MT.mousePressed(() => {
+    songOne.play();
+    isVisualizerActive = true;
+    currentBackground = img;
+    songTwo.stop();
+    songThree.stop();
+    songFour.stop();
+    songFive.stop();
+    songSix.stop();
+    songSev.stop();
+    songEte.stop();
+    MT.hide();
+    UG.hide();
+    SH.hide();
+    TT.hide();
+    CMO.hide();
+    SM.hide();
+    FT.hide();
+    GOD.hide();
+    AOTL.hide();
+  });
+
+  UG = createButton('United in Grief (Kendrick Lamar');
+  UG.position(20, 200);
+  UG.mousePressed(() => {
+    songTwo.play();
+    isVisualizerActive = true;
+    currentBackground = a;
+    songOne.stop();
+    songThree.stop();
+    songFour.stop();
+    songFive.stop();
+    songSix.stop();
+    songSev.stop();
+    songEte.stop();
+    songNine.stop();
+    MT.hide();
+    UG.hide();
+    SH.hide();
+    TT.hide();
+    CMO.hide();
+    SM.hide();
+    FT.hide();
+    GOD.hide();
+    AOTL.hide();
+  });
+
+  SH = createButton('Silent Hill (Kendrick Lamar)');
+  SH.position(20, 300);
+  SH.mousePressed(() => {
+    songThree.play();
+    isVisualizerActive = true;
+    currentBackground = b;
+    songOne.stop();
+    songTwo.stop();
+    songFour.stop();
+    songFive.stop();
+    songSix.stop();
+    songSev.stop();
+    songEte.stop();
+    songNine.stop();
+    MT.hide();
+    UG.hide();
+    SH.hide();
+    TT.hide();
+    CMO.hide();
+    SM.hide();
+    FT.hide();
+    GOD.hide();
+    AOTL.hide();
+  });
+
+  TT = createButton('TipToe (Tyler the Creator)');
+  TT.position(20, 400);
+  TT.mousePressed(() => {
+    songFour.play();
+    isVisualizerActive = true;
+    currentBackground = t;
+    songOne.stop();
+    songTwo.stop();
+    songThree.stop();
+    songFive.stop();
+    songSix.stop();
+    songSev.stop();
+    songEte.stop();
+    songNine.stop();
+    MT.hide();
+    UG.hide();
+    SH.hide();
+    TT.hide();
+    CMO.hide();
+    SM.hide();
+    FT.hide();
+    GOD.hide();
+    AOTL.hide();
+  });
+
+  CMO = createButton('Count me out (Kendrick Lamar)');
+  CMO.position(20, 500);
+  CMO.mousePressed(() => {
+    songFive.play();
+    isVisualizerActive = true;
+    currentBackground = c;
+    songOne.stop();
+    songTwo.stop();
+    songThree.stop();
+    songFour.stop();
+    songSix.stop();
+    songSev.stop();
+    songEte.stop();
+    songNine.stop();
+    MT.hide();
+    UG.hide();
+    SH.hide();
+    TT.hide();
+    CMO.hide();
+    SM.hide();
+    FT.hide();
+    GOD.hide();
+    AOTL.hide();
+  });
+
+  SM = createButton('SICKO MODE (Travis Scott)');
+  SM.position(20, 600);
+  SM.mousePressed(() => {
+    songSix.play();
+    isVisualizerActive = true;
+    currentBackground = s;
+    songOne.stop();
+    songTwo.stop();
+    songThree.stop();
+    songFour.stop();
+    songFive.stop();
+    songSev.stop();
+    songEte.stop();
+    songNine.stop();
+    MT.hide();
+    UG.hide();
+    SH.hide();
+    TT.hide();
+    CMO.hide();
+    SM.hide();
+    FT.hide();
+    GOD.hide();
+    AOTL.hide();
+  });
+
+  FT = createButton('Family ties (Kendrick Lamar & Baby Keem)');
+  FT.position(20, 700);
+  FT.mousePressed(() => {
+    songSev.play();
+    isVisualizerActive = true;
+    currentBackground = k;
+    songOne.stop();
+    songTwo.stop();
+    songThree.stop();
+    songFour.stop();
+    songFive.stop();
+    songSix.stop();
+    songEte.stop();
+    songNine.stop();
+    MT.hide();
+    UG.hide();
+    SH.hide();
+    TT.hide();
+    CMO.hide();
+    SM.hide();
+    FT.hide();
+    GOD.hide();
+    AOTL.hide();
+  });
+
+  GOD = createButton('Godzilla (Eminem ft. juice WRLD)');
+  GOD.position(20, 800);
+  GOD.mousePressed(() => {
+    songEte.play();
+    isVisualizerActive = true;
+    currentBackground = e;
+    songOne.stop();
+    songTwo.stop();
+    songThree.stop();
+    songFour.stop();
+    songFive.stop();
+    songSix.stop();
+    songSev.stop();
+    songNine.stop();
+    MT.hide();
+    UG.hide();
+    SH.hide();
+    TT.hide();
+    CMO.hide();
+    SM.hide();
+    FT.hide();
+    GOD.hide();
+    AOTL.hide();
+  });
+
+  AOTL = createButton('All of the Lights (Kanye West)');
+  AOTL.position(20, 900);
+  AOTL.mousePressed(() => {
+    songNine.play();
+    isVisualizerActive = true;
+    currentBackground = f;
+    songOne.stop();
+    songTwo.stop();
+    songThree.stop();
+    songFour.stop();
+    songFive.stop();
+    songSix.stop();
+    songSev.stop();
+    songEte.stop();
+    MT.hide();
+    UG.hide();
+    SH.hide();
+    TT.hide();
+    CMO.hide();
+    SM.hide();
+    FT.hide();
+    GOD.hide();
+    AOTL.hide();
+  });
 }
 
 function draw() {
@@ -168,148 +400,30 @@ function drawMainMenu() {
   textAlign(CENTER, CENTER);
   text("Song List", width / 2, height / 30);
 
-  // Display menu options
-  textSize(24);
-  text("1. Money Trees (Kendrick Lamar)", width / 2, height / 2 - 360);
-  text("2. United in Grief (Kendrick Lamar)", width / 2, height / 2 - 255);
-  text("3. TipToe (Tyler the Creator)", width / 2, height / 2 - 170);
-  text("4. Silent Hill (Kendrick Lamar)", width / 2, height / 2 - 85);
-  text("5. Count me out (Kendrick Lamar)", width / 2, height / 2 + 0);
-  text("6. SICKO MODE (Travis Scott)", width / 2, height / 2 + 85);
-  text("7. Family ties (kendrick Lamar & Baby Keem)", width / 2, height / 2 + 170);
-  text("8. Godzilla (Eminem ft. juice WRLD)", width / 2, height / 2 + 255);
-  text("9. All of the Lights (Kanye West)", width / 2, height / 2 + 360);
 }
 
 function keyTyped() {
 
-  if (key === '1') {
-    songOne.play();
-    isVisualizerActive = true;
-    currentBackground = img;
-    songTwo.pause();
-    songThree.pause();
-    songFour.pause();
-    songFive.pause();
-    songSix.pause();
-    songSev.pause();
-    songEte.pause();
-    songNine.pause();
-  }
-  else if (key === '2') {
-    songTwo.play();
-    isVisualizerActive = true;
-    currentBackground = a;
-    songOne.pause();
-    songThree.pause();
-    songFour.pause();
-    songFive.pause();
-    songSix.pause();
-    songSev.pause();
-    songEte.pause();
-    songNine.pause();
-  }
-  else if (key === '3') {
-    songThree.play();
-    isVisualizerActive = true;
-    currentBackground = b;
-    songOne.pause();
-    songTwo.pause();
-    songFour.pause();
-    songFive.pause();
-    songSix.pause();
-    songSev.pause();
-    songEte.pause();
-    songNine.pause();
-  }
-  else if (key === '4') {
-    songFour.play();
-    isVisualizerActive = true;
-    currentBackground = t;
-    songOne.pause();
-    songTwo.pause();
-    songThree.pause();
-    songFive.pause();
-    songSix.pause();
-    songSev.pause();
-    songEte.pause();
-    songNine.pause();
-  }
-  else if (key === '5') {
-    songFive.play();
-    isVisualizerActive = true;
-    currentBackground = c;
-    songOne.pause();
-    songTwo.pause();
-    songThree.pause();
-    songFour.pause();
-    songSix.pause();
-    songSev.pause();
-    songEte.pause();
-    songNine.pause();
-  }
-  else if (key === '6') {
-    songSix.play();
-    isVisualizerActive = true;
-    currentBackground = s;
-    songOne.pause();
-    songTwo.pause();
-    songThree.pause();
-    songFour.pause();
-    songFive.pause();
-    songSev.pause();
-    songEte.pause();
-    songNine.pause();
-  }
-  else if (key === '7') {
-    songSev.play();
-    isVisualizerActive = true;
-    currentBackground = k;
-    songOne.pause();
-    songTwo.pause();
-    songThree.pause();
-    songFour.pause();
-    songFive.pause();
-    songSix.pause();
-    songEte.pause();
-    songNine.pause();
-  }
-  else if (key === '8') {
-    songEte.play();
-    isVisualizerActive = true;
-    currentBackground = e;
-    songOne.pause();
-    songTwo.pause();
-    songThree.pause();
-    songFour.pause();
-    songFive.pause();
-    songSix.pause();
-    songSev.pause();
-    songNine.pause();
-  }
-  else if (key === '9') {
-    songNine.play();
-    isVisualizerActive = true;
-    currentBackground = f;
-    songOne.pause();
-    songTwo.pause();
-    songThree.pause();
-    songFour.pause();
-    songFive.pause();
-    songSix.pause();
-    songSev.pause();
-    songEte.pause();
-  }
-  else if (key === ' ') {   
-    songOne.pause();
-    songTwo.pause();
-    songThree.pause();
-    songFour.pause();
-    songFive.pause();
-    songSix.pause();
-    songSev.pause();
-    songEte.pause();
-    songNine.pause();
+  if (key === ' ') {   
+    songOne.stop();
+    songTwo.stop();
+    songThree.stop();
+    songFour.stop();
+    songFive.stop();
+    songSix.stop();
+    songSev.stop();
+    songEte.stop();
+    songNine.stop();
     isVisualizerActive = false;
+    MT.show();
+    UG.show();
+    SH.show();
+    TT.show();
+    CMO.show();
+    SM.show();
+    FT.show();
+    GOD.show();
+    AOTL.show();
   }
+  
 }
